@@ -550,43 +550,305 @@ export default function Page() {
             </div>
           </section>
 
-          {/* Service Areas Section */}
+          {/* Emergency Services Detail Section */}
           <section className="py-16 md:py-24 bg-secondary/30">
+            <div className="container mx-auto px-4">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-balance">
+                    Pogotowie hydrauliczne 24/7
+                  </h2>
+                  <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                    Awarie hydrauliczne nie wybierają pory dnia ani nocy. Dlatego nasza ekipa jest gotowa do działania przez całą dobę, siedem dni w tygodniu, włącznie ze świętami i weekendami.
+                  </p>
+                  <div className="space-y-4 mb-8">
+                    <div className="flex gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 flex-shrink-0">
+                        <Zap className="h-5 w-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-foreground mb-1">Szybka reakcja</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          Nasz średni czas dojazdu to zaledwie 30-60 minut od momentu zgłoszenia. W sytuacjach krytycznych, takich jak zalanie czy pęknięcie rury, staramy się być na miejscu jeszcze szybciej.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 flex-shrink-0">
+                        <Settings className="h-5 w-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-foreground mb-1">Profesjonalny sprzęt</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          Nasi specjaliści dysponują pełnym wyposażeniem do usuwania awarii na miejscu. Samochody serwisowe wyposażone są w specjalistyczne narzędzia i części zamienne.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 flex-shrink-0">
+                        <Shield className="h-5 w-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-foreground mb-1">Gwarancja usług</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          Wszystkie nasze interwencje awaryjne objęte są gwarancją. Posiadamy pełne ubezpieczenie OC i NW, dzięki czemu możesz być spokojny o bezpieczeństwo swojego mienia.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <Button size="lg" className="bg-destructive hover:bg-destructive/90 text-destructive-foreground">
+                    <Phone className="h-5 w-5 mr-2" />
+                    Zadzwoń w sprawie awarii
+                  </Button>
+                </div>
+                <div className="relative h-[500px] rounded-2xl overflow-hidden">
+                  <Image
+                    src="/images/emergency-service.jpg"
+                    alt="Pogotowie hydrauliczne Kalisz - szybka pomoc"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Detailed Services with Images */}
+          <section className="py-16 md:py-24 bg-background">
             <div className="container mx-auto px-4">
               <div className="max-w-3xl mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
-                  Obszar działania
+                  Szczegółowy zakres usług
                 </h2>
                 <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
-                  Świadczymy usługi w Kaliszu i okolicach
+                  Kompleksowa obsługa hydrauliczna od A do Z
                 </p>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                {[
-                  'Kalisz',
-                  'Ostrów Wielkopolski',
-                  'Pleszew',
-                  'Koźminek',
-                  'Gołuchów',
-                  'Stawiszyn',
-                  'Opatówek',
-                  'Brzeziny',
-                  'Ceków-Kolonia',
-                  'Szczytniki',
-                  'Rajsko',
-                  'Turek',
-                ].map((city) => (
-                  <Card key={city} className="p-4 text-center hover:shadow-lg transition-shadow">
-                    <MapPin className="h-5 w-5 text-primary mx-auto mb-2" />
-                    <p className="font-medium text-foreground">{city}</p>
-                  </Card>
-                ))}
+              
+              {/* Bathroom Installations */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                <div className="relative h-[400px] rounded-2xl overflow-hidden order-2 lg:order-1">
+                  <Image
+                    src="/images/bathroom-install.jpg"
+                    alt="Instalacje łazienkowe Kalisz"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="order-1 lg:order-2">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 mb-4">
+                    <Droplet className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground mb-4">Kompleksowe instalacje łazienkowe</h3>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    Zajmujemy się pełnym zakresem prac hydraulicznych w łazienkach - od projektowania po wykonanie końcowe. Montujemy wanny, kabiny prysznicowe, umywalki, sedesy oraz kompletną armaturę sanitarną.
+                  </p>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold text-foreground">Projekty na wymiar</p>
+                        <p className="text-sm text-muted-foreground">Doradzimy najlepsze rozwiązania dostosowane do Twoich potrzeb i budżetu</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold text-foreground">Nowoczesna armatura</p>
+                        <p className="text-sm text-muted-foreground">Współpracujemy z renomowanymi producentami armatury sanitarnej</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold text-foreground">Montaż systemów podtynkowych</p>
+                        <p className="text-sm text-muted-foreground">Nowoczesne rozwiązania podtynkowe dla estetyki i funkcjonalności</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Heating Systems */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 mb-4">
+                    <Thermometer className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground mb-4">Pompy ciepła i systemy grzewcze</h3>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    Specjalizujemy się w montażu i serwisie nowoczesnych pomp ciepła oraz systemów ogrzewania. Pompy ciepła to ekologiczne i ekonomiczne rozwiązanie, które pozwala obniżyć koszty ogrzewania nawet o 70%.
+                  </p>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold text-foreground">Pompy powietrzne i gruntowe</p>
+                        <p className="text-sm text-muted-foreground">Dobierzemy optymalny typ pompy ciepła do Twojej nieruchomości</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold text-foreground">Pełna dokumentacja i rozruch</p>
+                        <p className="text-sm text-muted-foreground">Kompleksowa obsługa wraz z uruchomieniem i przeszkoleniem</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold text-foreground">Serwis i przeglądy okresowe</p>
+                        <p className="text-sm text-muted-foreground">Regularne przeglądy zapewniające optymalną wydajność systemu</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div className="relative h-[400px] rounded-2xl overflow-hidden">
+                  <Image
+                    src="/images/heating-system.jpg"
+                    alt="Pompy ciepła Kalisz - montaż i serwis"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Pipe Repairs */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                <div className="relative h-[400px] rounded-2xl overflow-hidden order-2 lg:order-1">
+                  <Image
+                    src="/images/leak-repair.jpg"
+                    alt="Naprawa przecieków Kalisz"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="order-1 lg:order-2">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 mb-4">
+                    <Wrench className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground mb-4">Naprawa przecieków i rur</h3>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    Przecieki i uszkodzone rury to problemy wymagające natychmiastowej reakcji. Dysponujemy profesjonalnym sprzętem do lokalizacji i usuwania przecieków, w tym kamerami endoskopowymi i detektorami wilgoci.
+                  </p>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold text-foreground">Lokalizacja bezniszcząca</p>
+                        <p className="text-sm text-muted-foreground">Precyzyjna lokalizacja przecieków bez zbędnego kucia ścian</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold text-foreground">Wymiana i naprawa rur</p>
+                        <p className="text-sm text-muted-foreground">Pracujemy na nowoczesnych materiałach - PEX, miedź, polipropylen</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold text-foreground">Próby szczelności</p>
+                        <p className="text-sm text-muted-foreground">Każda naprawa kończy się profesjonalną próbą ciśnieniową</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Drain Cleaning */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 mb-4">
+                    <Wrench className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground mb-4">Udrażnianie rur i kanalizacji</h3>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    Zapchane rury i kanalizacja to częsty problem w każdym gospodarstwie. Oferujemy profesjonalne usługi udrażniania z wykorzystaniem najnowszych technologii i specjalistycznego sprzętu.
+                  </p>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold text-foreground">Mechaniczne udrażnianie</p>
+                        <p className="text-sm text-muted-foreground">Profesjonalne sprężyny hydrauliczne do usuwania uporczywych zatorów</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold text-foreground">Inspekcja kamerą TV</p>
+                        <p className="text-sm text-muted-foreground">Precyzyjna diagnostyka stanu rur i lokalizacja problemów</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold text-foreground">Czyszczenie wysokociśnieniowe</p>
+                        <p className="text-sm text-muted-foreground">Skuteczne usuwanie osadów i kamienia z instalacji</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div className="relative h-[400px] rounded-2xl overflow-hidden">
+                  <Image
+                    src="/images/drain-cleaning.jpg"
+                    alt="Udrażnianie rur Kalisz"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Water Heaters */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="relative h-[400px] rounded-2xl overflow-hidden order-2 lg:order-1">
+                  <Image
+                    src="/images/boiler-service.jpg"
+                    alt="Serwis bojlerów Kalisz"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="order-1 lg:order-2">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 mb-4">
+                    <Thermometer className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground mb-4">Bojlery i podgrzewacze wody</h3>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    Montaż, naprawa i serwis bojlerów elektrycznych, gazowych oraz podgrzewaczy przepływowych. Zapewniamy ciągły dostęp do ciepłej wody użytkowej w Twoim domu lub firmie.
+                  </p>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold text-foreground">Montaż i wymiana</p>
+                        <p className="text-sm text-muted-foreground">Profesjonalny dobór i instalacja optymalnego urządzenia</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold text-foreground">Serwis i konserwacja</p>
+                        <p className="text-sm text-muted-foreground">Regularne przeglądy i czyszczenie zapobiegające awariom</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold text-foreground">Naprawa awarii</p>
+                        <p className="text-sm text-muted-foreground">Wymiana grzałek, termostatów i innych komponentów</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </section>
 
           {/* Process Section */}
-          <section className="py-16 md:py-24 bg-background">
+          <section className="py-16 md:py-24 bg-secondary/30">
             <div className="container mx-auto px-4">
               <div className="max-w-3xl mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
