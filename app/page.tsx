@@ -1,7 +1,8 @@
 import Link from 'next/link'
-import { Phone, Wrench, Droplet, Thermometer, Clock, CheckCircle2, MapPin, Mail, Facebook } from 'lucide-react'
+import { Phone, Wrench, Droplet, Thermometer, Clock, CheckCircle2, MapPin, Mail, Facebook, Shield, Award, Users, Star, TrendingUp, Zap, Settings, Home, Building2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
+import Image from 'next/image'
 
 export default function Page() {
   return (
@@ -69,8 +70,18 @@ export default function Page() {
         {/* Main Content */}
         <main className="flex-1 lg:ml-64">
           {/* Hero Section */}
-          <section id="home" className="min-h-[calc(100vh-4rem)] flex items-center bg-secondary/30">
-            <div className="container mx-auto px-4 py-16 md:py-24">
+          <section id="home" className="relative min-h-[calc(100vh-4rem)] flex items-center overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/60 z-10" />
+            <div className="absolute inset-0 z-0">
+              <Image
+                src="/images/hero-hydraulic.jpg"
+                alt="Profesjonalny hydraulik Kalisz"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+            <div className="container mx-auto px-4 py-16 md:py-24 relative z-20">
               <div className="max-w-3xl">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 text-balance">
                   Pogotowie Hydrauliczne Kalisz 24/7
@@ -83,13 +94,13 @@ export default function Page() {
                     <Phone className="h-5 w-5 mr-2" />
                     Zadzwoń teraz
                   </Button>
-                  <Button size="lg" variant="outline" className="text-lg h-14">
+                  <Button size="lg" variant="outline" className="text-lg h-14 bg-background/80 backdrop-blur">
                     Zobacz usługi
                   </Button>
                 </div>
                 <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 backdrop-blur">
                       <Clock className="h-6 w-6 text-primary" />
                     </div>
                     <div>
@@ -98,7 +109,7 @@ export default function Page() {
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 backdrop-blur">
                       <CheckCircle2 className="h-6 w-6 text-primary" />
                     </div>
                     <div>
@@ -107,13 +118,57 @@ export default function Page() {
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 backdrop-blur">
                       <MapPin className="h-6 w-6 text-primary" />
                     </div>
                     <div>
                       <p className="font-semibold text-foreground">Kalisz</p>
                       <p className="text-sm text-muted-foreground">i okolice</p>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Trust Badges Section */}
+          <section className="py-12 bg-background border-y">
+            <div className="container mx-auto px-4">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+                <div className="flex flex-col items-center gap-3">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
+                    <Shield className="h-8 w-8 text-primary" />
+                  </div>
+                  <div className="text-center">
+                    <p className="font-semibold text-foreground">Gwarancja</p>
+                    <p className="text-sm text-muted-foreground">Na wszystkie usługi</p>
+                  </div>
+                </div>
+                <div className="flex flex-col items-center gap-3">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
+                    <Award className="h-8 w-8 text-primary" />
+                  </div>
+                  <div className="text-center">
+                    <p className="font-semibold text-foreground">Certyfikaty</p>
+                    <p className="text-sm text-muted-foreground">Uprawnienia</p>
+                  </div>
+                </div>
+                <div className="flex flex-col items-center gap-3">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
+                    <Zap className="h-8 w-8 text-primary" />
+                  </div>
+                  <div className="text-center">
+                    <p className="font-semibold text-foreground">Szybko</p>
+                    <p className="text-sm text-muted-foreground">30-60 min dojazd</p>
+                  </div>
+                </div>
+                <div className="flex flex-col items-center gap-3">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
+                    <Users className="h-8 w-8 text-primary" />
+                  </div>
+                  <div className="text-center">
+                    <p className="font-semibold text-foreground">Doświadczenie</p>
+                    <p className="text-sm text-muted-foreground">1000+ klientów</p>
                   </div>
                 </div>
               </div>
@@ -257,6 +312,409 @@ export default function Page() {
                     </li>
                   </ul>
                 </Card>
+              </div>
+            </div>
+          </section>
+
+          {/* Why Choose Us Section */}
+          <section className="py-16 md:py-24 bg-background">
+            <div className="container mx-auto px-4">
+              <div className="max-w-3xl mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
+                  Dlaczego my?
+                </h2>
+                <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
+                  Profesjonalizm, doświadczenie i terminowość - to nas wyróżnia
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <Card className="p-6">
+                  <div className="flex gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 flex-shrink-0">
+                      <Clock className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-foreground mb-2">Dostępność 24/7</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Nasza ekipa jest dostępna przez całą dobę, 7 dni w tygodniu, również w święta. Awarie nie czekają - my też nie.
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+                <Card className="p-6">
+                  <div className="flex gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 flex-shrink-0">
+                      <Zap className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-foreground mb-2">Szybki czas reakcji</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Średni czas dojazdu to zaledwie 30-60 minut. W nagłych przypadkach staramy się być jeszcze szybciej.
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+                <Card className="p-6">
+                  <div className="flex gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 flex-shrink-0">
+                      <Settings className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-foreground mb-2">Profesjonalny sprzęt</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Dysponujemy najnowocześniejszym sprzętem diagnostycznym i narzędziami najwyższej jakości.
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+                <Card className="p-6">
+                  <div className="flex gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 flex-shrink-0">
+                      <Shield className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-foreground mb-2">Gwarancja i ubezpieczenie</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Wszystkie nasze usługi objęte są gwarancją. Posiadamy pełne ubezpieczenie OC i NW.
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+                <Card className="p-6">
+                  <div className="flex gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 flex-shrink-0">
+                      <Award className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-foreground mb-2">Wykwalifikowana kadra</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Nasi specjaliści posiadają wszystkie wymagane uprawnienia i certyfikaty branżowe.
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+                <Card className="p-6">
+                  <div className="flex gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 flex-shrink-0">
+                      <TrendingUp className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-foreground mb-2">Konkurencyjne ceny</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Oferujemy przejrzyste kosztorysy bez ukrytych opłat. Najlepsza jakość w rozsądnej cenie.
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+            </div>
+          </section>
+
+          {/* Gallery Section */}
+          <section className="py-16 md:py-24 bg-secondary/30">
+            <div className="container mx-auto px-4">
+              <div className="max-w-3xl mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
+                  Nasze realizacje
+                </h2>
+                <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
+                  Zobacz przykłady naszych prac i przekonaj się o jakości usług
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="relative h-64 rounded-lg overflow-hidden group">
+                  <Image
+                    src="/images/bathroom-install.jpg"
+                    alt="Instalacja łazienki Kalisz"
+                    fill
+                    className="object-cover transition-transform group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex items-end p-4">
+                    <p className="text-foreground font-semibold">Łazienka pod klucz</p>
+                  </div>
+                </div>
+                <div className="relative h-64 rounded-lg overflow-hidden group">
+                  <Image
+                    src="/images/heating-system.jpg"
+                    alt="Pompa ciepła Kalisz"
+                    fill
+                    className="object-cover transition-transform group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex items-end p-4">
+                    <p className="text-foreground font-semibold">Pompa ciepła</p>
+                  </div>
+                </div>
+                <div className="relative h-64 rounded-lg overflow-hidden group">
+                  <Image
+                    src="/images/pipe-repair.jpg"
+                    alt="Naprawa instalacji Kalisz"
+                    fill
+                    className="object-cover transition-transform group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex items-end p-4">
+                    <p className="text-foreground font-semibold">Modernizacja rur</p>
+                  </div>
+                </div>
+                <div className="relative h-64 rounded-lg overflow-hidden group">
+                  <Image
+                    src="/images/kitchen-plumbing.jpg"
+                    alt="Instalacja kuchenna Kalisz"
+                    fill
+                    className="object-cover transition-transform group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex items-end p-4">
+                    <p className="text-foreground font-semibold">Kuchnia</p>
+                  </div>
+                </div>
+                <div className="relative h-64 rounded-lg overflow-hidden group md:col-span-2">
+                  <Image
+                    src="/images/emergency-service.jpg"
+                    alt="Pogotowie hydrauliczne Kalisz"
+                    fill
+                    className="object-cover transition-transform group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex items-end p-4">
+                    <p className="text-foreground font-semibold">Interwencja awaryjna 24/7</p>
+                  </div>
+                </div>
+                <div className="relative h-64 rounded-lg overflow-hidden group md:col-span-2">
+                  <Image
+                    src="/images/water-heater.jpg"
+                    alt="Bojler Kalisz"
+                    fill
+                    className="object-cover transition-transform group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex items-end p-4">
+                    <p className="text-foreground font-semibold">Montaż bojlera</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Testimonials Section */}
+          <section className="py-16 md:py-24 bg-background">
+            <div className="container mx-auto px-4">
+              <div className="max-w-3xl mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
+                  Opinie klientów
+                </h2>
+                <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
+                  Zaufało nam ponad 1000 zadowolonych klientów
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <Card className="p-6">
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-5 w-5 fill-primary text-primary" />
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    {'"Szybka reakcja w nocy gdy pękła rura. Pan hydraulik przyjechał w 40 minut i wszystko naprawił profesjonalnie. Gorąco polecam!"'}
+                  </p>
+                  <div>
+                    <p className="font-semibold text-foreground">Anna K.</p>
+                    <p className="text-sm text-muted-foreground">Kalisz</p>
+                  </div>
+                </Card>
+                <Card className="p-6">
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-5 w-5 fill-primary text-primary" />
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    {'"Montaż całej instalacji w nowym domu. Terminowo, solidnie i w dobrej cenie. Nie spodziewałem się aż tak profesjonalnej obsługi."'}
+                  </p>
+                  <div>
+                    <p className="font-semibold text-foreground">Marek W.</p>
+                    <p className="text-sm text-muted-foreground">Opatówek</p>
+                  </div>
+                </Card>
+                <Card className="p-6">
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-5 w-5 fill-primary text-primary" />
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    {'"Pompa ciepła zainstalowana bez zarzutu. Fachowe doradztwo i rzetelna praca. Bardzo polecam tę firmę!"'}
+                  </p>
+                  <div>
+                    <p className="font-semibold text-foreground">Piotr S.</p>
+                    <p className="text-sm text-muted-foreground">Koźminek</p>
+                  </div>
+                </Card>
+              </div>
+            </div>
+          </section>
+
+          {/* Service Areas Section */}
+          <section className="py-16 md:py-24 bg-secondary/30">
+            <div className="container mx-auto px-4">
+              <div className="max-w-3xl mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
+                  Obszar działania
+                </h2>
+                <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
+                  Świadczymy usługi w Kaliszu i okolicach
+                </p>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                {[
+                  'Kalisz',
+                  'Ostrów Wielkopolski',
+                  'Pleszew',
+                  'Koźminek',
+                  'Gołuchów',
+                  'Stawiszyn',
+                  'Opatówek',
+                  'Brzeziny',
+                  'Ceków-Kolonia',
+                  'Szczytniki',
+                  'Rajsko',
+                  'Turek',
+                ].map((city) => (
+                  <Card key={city} className="p-4 text-center hover:shadow-lg transition-shadow">
+                    <MapPin className="h-5 w-5 text-primary mx-auto mb-2" />
+                    <p className="font-medium text-foreground">{city}</p>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Process Section */}
+          <section className="py-16 md:py-24 bg-background">
+            <div className="container mx-auto px-4">
+              <div className="max-w-3xl mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
+                  Jak działamy?
+                </h2>
+                <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
+                  Prosty proces od zgłoszenia do realizacji
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div className="relative">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground text-2xl font-bold mb-4">
+                      1
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground mb-2">Kontakt</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Zadzwoń lub napisz. Opisz problem i umów się na wizytę
+                    </p>
+                  </div>
+                  <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-border -z-10" />
+                </div>
+                <div className="relative">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground text-2xl font-bold mb-4">
+                      2
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground mb-2">Dojazd</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Szybki przyjazd naszego specjalisty na miejsce
+                    </p>
+                  </div>
+                  <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-border -z-10" />
+                </div>
+                <div className="relative">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground text-2xl font-bold mb-4">
+                      3
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground mb-2">Diagnoza</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Profesjonalna ocena problemu i wycena naprawy
+                    </p>
+                  </div>
+                  <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-border -z-10" />
+                </div>
+                <div className="relative">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground text-2xl font-bold mb-4">
+                      4
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground mb-2">Realizacja</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Naprawa lub montaż z gwarancją jakości
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Team Section */}
+          <section className="py-16 md:py-24 bg-secondary/30">
+            <div className="container mx-auto px-4">
+              <div className="max-w-3xl mx-auto text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
+                  Nasz zespół
+                </h2>
+                <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
+                  Doświadczeni specjaliści gotowi pomóc
+                </p>
+              </div>
+              <div className="max-w-4xl mx-auto">
+                <div className="relative h-96 rounded-2xl overflow-hidden mb-8">
+                  <Image
+                    src="/images/team.jpg"
+                    alt="Zespół Hydro Fix Kalisz"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                  <div>
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 mx-auto mb-3">
+                      <Award className="h-8 w-8 text-primary" />
+                    </div>
+                    <h3 className="font-bold text-foreground mb-1">Certyfikowani</h3>
+                    <p className="text-sm text-muted-foreground">Wszyscy posiadamy uprawnienia</p>
+                  </div>
+                  <div>
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 mx-auto mb-3">
+                      <Users className="h-8 w-8 text-primary" />
+                    </div>
+                    <h3 className="font-bold text-foreground mb-1">Doświadczeni</h3>
+                    <p className="text-sm text-muted-foreground">Średnio 10+ lat w branży</p>
+                  </div>
+                  <div>
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 mx-auto mb-3">
+                      <CheckCircle2 className="h-8 w-8 text-primary" />
+                    </div>
+                    <h3 className="font-bold text-foreground mb-1">Rzetelni</h3>
+                    <p className="text-sm text-muted-foreground">Terminowość i jakość</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* CTA Section */}
+          <section className="py-16 md:py-24 bg-primary text-primary-foreground">
+            <div className="container mx-auto px-4">
+              <div className="max-w-3xl mx-auto text-center">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">
+                  Potrzebujesz hydraulika?
+                </h2>
+                <p className="text-lg mb-8 text-primary-foreground/90 text-pretty leading-relaxed">
+                  Skontaktuj się z nami już teraz. Jesteśmy dostępni 24/7, również w święta i weekendy.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg h-14">
+                    <Phone className="h-5 w-5 mr-2" />
+                    +48 XXX XXX XXX
+                  </Button>
+                  <Button size="lg" variant="outline" className="text-lg h-14 bg-background text-foreground hover:bg-background/90">
+                    <Mail className="h-5 w-5 mr-2" />
+                    Wyślij email
+                  </Button>
+                </div>
               </div>
             </div>
           </section>
