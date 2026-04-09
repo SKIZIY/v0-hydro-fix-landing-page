@@ -348,12 +348,13 @@ export default function Page() {
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
                       className="mt-4"
-                    ></iframe>
+                      title="Mapa lokalizacji Hydro Fix w Kaliszu"
+                    />
                   </div>
                 </div>
               </div>
               <div className="pt-8 border-t text-center text-sm text-muted-foreground">
-                <p>&copy; {new Date().getFullYear()} Hydro Fix - Hydraulik Kalisz 24/7. Wszelkie prawa zastrzeżone.</p>
+                <p>&copy; 2026 Hydro Fix - Hydraulik Kalisz 24/7. Wszelkie prawa zastrzeżone.</p>
               </div>
             </div>
           </footer>
